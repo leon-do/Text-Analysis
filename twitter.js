@@ -9,7 +9,19 @@ var client = new Twitter({
 });
  
 
+
+var eventArray = [];
+
+
+// get twitter stream
 var stream = client.stream('statuses/filter', {track: 'bitcoin'});
 stream.on('data', function(event) {
-  console.log(event.text);
+	eventArray.push(text);
 });
+
+setInterval(function(){
+	console.log(eventArray)
+	eventArray = []
+}, 30000)
+
+
