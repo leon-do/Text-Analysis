@@ -1,7 +1,10 @@
+#my stuff
+tokens.js
+
 #logs 
 *.log 
 npm-debug.log* 
- 
+
 # Runtime data 
 pids 
 *.pid 
