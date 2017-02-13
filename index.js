@@ -37,7 +37,7 @@ stream.on('data', function(event) {
 setInterval(function(){
 	//console.log(tweet)
 	analyzeText(tweet, "bitcoin")
-}, 2000)
+}, 5000)
 
 
 
@@ -50,9 +50,9 @@ function analyzeText(text, coin){
 	textapi.sentiment({
 	  'text': text
 	}, function(error, response) {
-		console.log(response)
+		console.log(response.polarity);
 		if (response.polarity !== 'neutral'){
-			tradeCrypto(response.polarity, coin)
+		 	tradeCrypto(response.polarity, coin)
 		}
 	});	
 }
